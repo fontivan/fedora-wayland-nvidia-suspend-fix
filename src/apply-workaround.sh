@@ -94,10 +94,18 @@ function ApplyGnomeShellSuspendWorkaround() {
 }
 
 function main() {
+
     # Check that we are root
     if ! IsUserEffectivelyRoot
     then
         echo "Please run as root - It is necessary to apply the workaround."
+        return 1
+    fi
+
+    # Check that we are on Fedora
+    if ! IsFedoraDistribution
+    then
+        echo "This script should not be run on a non-Fedora system"
         return 1
     fi
 
