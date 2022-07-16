@@ -228,30 +228,39 @@ function uninstall_workaround(){
     return 0
 }
 
+function print_help() {
+    echo "fedora-wayland-nvidia-suspend-fix.sh help"
+    echo " * If no arguments are specified, print this help message"
+    echo " * If an unrecognized argument is specified, print this help message."
+    echo " * If an argument of i or I is specified, uninstall the workarounds."
+    echo " * If an argument of u or U is specified, uninstall the workarounds."
+}
+
 ########################################################################################################################
 # Main
 ########################################################################################################################
 
-if [[ $# -eq 0 ]]
+if [[ $# -gt 0 ]]
 then
-    LogInfo "Installing workarounds"
-    if ! install_workaround
+    if [[ $1 =~ ^[Ii]$ ]]
     then
-        exit 1
-    fi
-elif [[ $1 =~ ^[Dd]$ ]]
-then
-    LogInfo "Uninstalling workarounds"
-    if ! uninstall_workaround
+        LogInfo "Installing workarounds"
+        if ! install_workaround
+        then
+            exit 1
+        fi
+        exit 0
+    elif [[ $1 =~ ^[Uu]$ ]]
     then
-        exit 1
+        LogInfo "Uninstalling workarounds"
+        if ! uninstall_workaround
+        then
+            exit 1
+        fi
+        exit 0
     fi
-else
-    echo "fedora-wayland-nvidia-suspend-fix.sh help"
-    echo " * If no arguments are specified, install the workarounds."
-    echo " * If an argument of D or d is specified, uninstall the workarounds."
-    echo " * If an argument of H or h is specified, print this help message."
-    echo " * If an unrecognized argument is specified, print this help message."
-    exit 1
 fi
-exit 0
+
+
+print_help
+exit 1
