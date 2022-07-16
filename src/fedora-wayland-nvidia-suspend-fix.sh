@@ -108,8 +108,8 @@ function ApplyGnomeShellSuspendWorkaround() {
 
     # Enable new systemd service
     systemctl daemon-reload
-    systemctl enable gnome-shell-suspend 2&>1 > /dev/null
-    systemctl enable gnome-shell-resume 2&>1 > /dev/null
+    systemctl -q enable gnome-shell-suspend
+    systemctl -q enable gnome-shell-resume
 
     return 0
 }
@@ -210,8 +210,8 @@ function uninstall_workaround(){
     fi
 
     # Remove gnome shell suspend
-    systemctl disable gnome-shell-suspend 2&>1 > /dev/null
-    systemctl disable gnome-shell-resume 2&>1 > /dev/null
+    systemctl -q disable gnome-shell-suspend
+    systemctl -q disable gnome-shell-resume
     rm -f "/etc/systemd/system/gnome-shell-resume.service"
     rm -f "/etc/systemd/system/gnome-shell-suspend.service"
     rm -f "/usr/local/bin/suspend-gnome-shell.sh"
