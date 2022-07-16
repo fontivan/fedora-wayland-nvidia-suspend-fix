@@ -28,5 +28,5 @@ fedora-wayland-nvidia-suspend-fix.sh help
 
 To install the workarounds using the script directly from github, you can do:
 ```
-curl -s "https://raw.githubusercontent.com/fontivan/fedora-wayland-nvidia-suspend-fix/main/src/fedora-wayland-nvidia-suspend-fix.sh" | bash -s -- i
+curl -s "https://raw.githubusercontent.com/fontivan/fedora-wayland-nvidia-suspend-fix/main/src/fedora-wayland-nvidia-suspend-fix.sh" | sudo bash -s -- i
 ```
