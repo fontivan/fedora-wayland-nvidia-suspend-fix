@@ -3,17 +3,17 @@ A short script to apply a work around to fixing suspend on Fedora when using the
 
 ## How do I know if I need this
 You can try this script if:
-    * You are using a relatively recent Fedora release (e.g. 36 at time of writing)
-    * You are using a relatively recent Nvidia proprietary driver (e.g. 515.57 at time of writing)
-    * You are using Wayland
-    * When you use suspend one of two problems occur:
+    1. You are using a relatively recent Fedora release (e.g. 36 at time of writing)
+    2. You are using a relatively recent Nvidia proprietary driver (e.g. 515.57 at time of writing)
+    3. You are using Wayland
+    4. When you use suspend one of two problems occur:
         - The screen goes dark for about 30 seconds, the computer never goes into suspend, and you are returned to the lock screen
         - Suspend works but when you come back the video memory is completely corrupt and requires a window manager restart or computer restart
 
 ## How does it work
 This script combines two separate work arounds:
-    * A fix from https://github.com/robswc/ubuntu-22-nvidia-suspend-fix-script to fix issue #1 above
-    * A fix to ensure the power configuration from xorg-x11-drv-nvidia-power is applied to fix issue #2 above
+    1. A fix from https://github.com/robswc/ubuntu-22-nvidia-suspend-fix-script to fix issue #1 above
+    2. A fix to ensure the power configuration from xorg-x11-drv-nvidia-power is applied to fix issue #2 above
 
 ## How do I use this
 Script usage can be found by running with no arugments, e.g.
