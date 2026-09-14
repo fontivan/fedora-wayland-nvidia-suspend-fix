@@ -1,3 +1,5 @@
+
+
 # fedora-wayland-nvidia-suspend-fix
 A short script to apply a work around to fixing suspend on Fedora when using the Nvidia proprietary driver and wayland
 
@@ -22,7 +24,7 @@ $> ./fedora-wayland-nvidia-suspend-fix.sh
 fedora-wayland-nvidia-suspend-fix.sh help
  * If no arguments are specified, print this help message
  * If an unrecognized argument is specified, print this help message.
- * If an argument of i or I is specified, uninstall the workarounds.
+ * If an argument of i or I is specified, install the workarounds.
  * If an argument of u or U is specified, uninstall the workarounds.
 ```
 
